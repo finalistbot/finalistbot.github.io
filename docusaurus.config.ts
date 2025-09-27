@@ -6,8 +6,8 @@ import { links } from "./constants";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Finalist",
+  tagline: "The best Discord bot for scrim/tournament management",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -71,7 +71,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/finalist.png",
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -79,7 +79,7 @@ const config: Config = {
       title: "Finalist",
       logo: {
         alt: "Finalist Logo",
-        src: "img/logo.svg",
+        src: "img/finalist.png",
       },
       items: [
         {

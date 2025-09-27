@@ -1,0 +1,33 @@
+---
+sidebar_position: 1
+---
+
+import { links } from '@site/src/constants';
+
+# Getting Started
+
+## Invite Finalist to your server
+
+You can invite Finalist to your server by clicking <a href={links.botInvite}>here</a>. Make sure you have the "Manage Server" permission in the server you want to add Finalist to.
+
+## Give Finalist permissions
+
+Finalist requires the following permissions to function properly:
+
+- Manage Roles
+- Manage Channels
+- Manage Messages
+- Read Message History
+- Send Messages
+- Embed Links
+- Use External Emojis
+
+## Setup Finalist
+
+To get started using Finalist, run `/setup` in your server. You must have the "Manage Server" permission to do this.
+
+Setup command creates a admin role, which you can assign to any user you want to have access to Finalist's admin commands. You can also customize the name of the role by providing an argument to the command, e.g. `/setup role:Moderator`.
+
+Default timezone of the server is set to UTC. You can change the timezone using `/setup timezone:<timezone>`, e.g. `/setup timezone:America/New_York`.
+
+Note: Can't find your timezone? Hop into our <a href={links.supportServer}>support server</a> and we'll help you out!

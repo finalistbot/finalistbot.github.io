@@ -73,7 +73,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/finalist.png",
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: "light",
     },
     navbar: {
       title: "Finalist",
@@ -121,34 +121,21 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
               label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              href: links.supportServer,
             },
             {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
+              label: "Github",
+              href: links.github,
             },
             {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              label: "Youtube",
+              href: links.youtube,
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Finalist.`,
     },
     prism: {
       theme: prismThemes.github,

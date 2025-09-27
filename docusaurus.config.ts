@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { links } from "./constants";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -77,7 +78,7 @@ const config: Config = {
     navbar: {
       title: "Finalist",
       logo: {
-        alt: "My Site Logo",
+        alt: "Finalist Logo",
         src: "img/logo.svg",
       },
       items: [
@@ -88,7 +89,17 @@ const config: Config = {
           label: "Docs",
         },
         {
-          href: "https://github.com/finalistbot/finalist",
+          href: links.supportServer,
+          label: "Support Server",
+          position: "right",
+        },
+        {
+          href: links.botInvite,
+          label: "Invite Bot",
+          position: "right",
+        },
+        {
+          href: links.github,
           label: "GitHub",
           position: "right",
         },

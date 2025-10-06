@@ -4,18 +4,38 @@ After creating a scrim, you can configure your scrim settings in the admin chann
 ![Admin Message Example](./assets/admin-config-message.png)
 
 ## Admin Channel Buttons
+  | Button | Description |
+  |--------|-------------|
+  |Configure Scrim|Opens a modal to configure the scrim settings. You can set the `max_player_per_team`, `min_player_per_team`, `max_teams`, and `max_substitute`.|
+  |Start Registration|This will make the `#register` channel visible to everyone and allow users to register for the scrim.|
+  |Close Registration|This will hide the `#register` channel and prevent users from registering.|
+  |Set Timing|Opens a modal to set the scrim timing. You can schedule the registration date and time.|
+  |Use Manual Slotlist|This will allow you to manually manage the slots in the `#participants` channel. You can Switch back to **Automatic slotlist** management by clicking the button again.|
+  |Disable AutoClose (By-default: Enabled)|This will prevent the scrim from automatically closing when the `max_number_of_teams` is reached. You can disable AutoClose again by clicking the button again.|
+  |Set Open Days|Open a Select Menu to choose the days of the week when registration is open.|
 
-- **Configure Scrim**: Opens a modal to configure the scrim settings. You can set the max_player per team, min_player per team, max_teams, and max_substitute.  
+## Examples
+
+### Configure Scrim 
   ![Configure Scrim Modal Example](./assets/configure-scrim-modal.png)
-- **Start Registration**: This will make the `#register` channel visible to everyone and allow users to register for the scrim.  
+### Start Registration
+  ![Register Channel Example](./assets/registration-started.png)
   ![Register Channel Example](./assets/start-registration.png)
-- **Close Registration**: This will hide the `#register` channel and prevent users from registering. In the below Image, I did not assign any slot to the team so it is empty.  
+### Close Registration
+  ![Close Registration Example](./assets/closed-registration.png)
   ![Close Registration Example](./assets/close-registration.png)
-- **Set Timing** : Opens a modal to set the scrim timing. You can set the registration start time.  
+### Set Timing 
   ![Set Timing Modal Example](./assets/set-timing-modal.png)
-- **Use Manual Slotlist**: This will allow you to manually manage the slots in the `#participants` channel. You can Switch back to **Automatic slotlist** management by clicking the button again.  
+### Use Manual Slotlist
   ![Manual Slotlist Example](./assets/manual-slotlist.png)
-- **Disable AutoClose**: This will prevent the scrim from automatically closing when the max number of teams is reached. You can disable AutoClose again by clicking the button again.  
+### Disable AutoClose
   ![Disable AutoClose Example](./assets/disable-autoclose.png)
-- **Set Open Days**: Open a Select Menu to choose the days of the week when registration is open.
+### Set Open Days
   ![Set Open Days Example](./assets/set-open-days.png)
+
+## Save Presets
+You can save the current scrim configuration as a preset using the `/save-preset` command in the admin channel. This allows you to quickly apply the same settings to future scrims. For example, to save the current configuration as `Solo`, you would use the following command:
+```
+/save-preset name:Solo
+```
+![Save Preset Command Example](./assets/save-preset-command.png)

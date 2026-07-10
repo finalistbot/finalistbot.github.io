@@ -1,0 +1,50 @@
+---
+sidebar_position: 2
+---
+
+# Roles and permissions
+
+Finalist has three independent role systems. They don't overlap, and confusing them is the
+usual source of "why can't I do this?".
+
+## In a team
+
+| Role | Can |
+|------|-----|
+| **Captain** | Register and unregister the team, pick the lineup, approve join requests, create and revoke invites, kick members, rename and delete the team. |
+| **Member** | Play. Leave the team. |
+| **Substitute** | Play, if the scrim allows substitutes. |
+
+One captain per team, and the captain cannot leave, only delete.
+
+## In an organization
+
+| Role | Can |
+|------|-----|
+| **Owner** | Everything. Cannot be removed or demoted. Exactly one, the creator. |
+| **Admin** | Every org action except transferring ownership: scrims, slots, results, members, invites, bans, Discord. |
+| **Moderator** | A limited set of moderation actions. |
+
+Membership is by invitation only. Invites expire after 7 days.
+
+## In Discord
+
+The bot's `/host` commands check your **organization** role, not your Discord permissions.
+
+This surprises people in both directions:
+
+- An org admin can use `/host` **without** Discord's Manage Server permission.
+- A Discord server administrator who isn't in the organization **cannot** use `/host` at all.
+
+Discord's Manage Server permission is only needed for the one thing Discord itself governs:
+inviting the bot to the server.
+
+Meanwhile, `/scrim`, `/team`, `/me` and `/org` need only a
+[linked account](../discord/link-account) in a
+[connected server](../discord/connect-server).
+
+## Bans
+
+Bans belong to an organization. A team or player banned by one org can still register with
+every other org. Being banned from a Discord server and being banned from an organization
+are unrelated.

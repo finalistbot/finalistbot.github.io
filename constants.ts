@@ -4,4 +4,9 @@ export const links = {
   supportServer: "https://discord.gg/4u3pF8XH3W",
   github: "https://github.com/finalistbot/finalist",
   youtube: "https://www.youtube.com/@finalistbot",
+
+  // The three surfaces of the platform.
+  web: "https://finalist.live",
+  play: "https://play.finalist.live",
+  manage: "https://app.finalist.live",
 };

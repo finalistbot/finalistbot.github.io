@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Scrims that run themselves',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Set the times once. Finalist opens registration, fills slots, backfills
+        the waitlist, reveals room details and closes out the scrim on schedule.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Nobody shows up short',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Pre-match filters check every lineup before start. Missing in-game names
+        and undersized rosters are removed, and waiting teams take their slots.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Right there in Discord',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Connect a server and announcements land in your channel. Captains reveal
+        their own lobby credentials, and only they can.
       </>
     ),
   },

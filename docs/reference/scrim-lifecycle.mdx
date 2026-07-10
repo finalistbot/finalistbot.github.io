@@ -1,0 +1,63 @@
+---
+sidebar_position: 1
+---
+
+# Scrim lifecycle
+
+Every scrim is in exactly one of seven states.
+
+| Status | Meaning |
+|--------|---------|
+| `draft` | Created, not visible to players. |
+| `upcoming` | Published and visible. Registration not open yet. |
+| `registration_open` | Teams can register. |
+| `registration_closed` | Registration ended, scrim not started. |
+| `ongoing` | Live. |
+| `completed` | Finished. Results may be declared. |
+| `cancelled` | Called off. |
+
+## Transitions
+
+```
+draft ──────────► upcoming ──────► registration_open ──┬──► registration_closed ──► ongoing ──► completed
+  │                   │                    │           │                                │
+  │                   │                    └───────────┼────────────────────────────────┘
+  │                   │                                │   (registration_open may start directly)
+  └───────────────────┴────────────────────────────────┴──► cancelled
+```
+
+Read as rules:
+
+- **draft** → upcoming, registration_open, cancelled
+- **upcoming** → registration_open, cancelled
+- **registration_open** → registration_closed, ongoing, cancelled
+- **registration_closed** → ongoing, cancelled
+- **ongoing** → completed *only*
+- **completed**, **cancelled** → nothing; both are final
+
+Two consequences catch people out:
+
+- Registration can be skipped over: a scrim may go straight from `registration_open` to
+  `ongoing` without closing first.
+- **A live scrim cannot be cancelled.** Once it's `ongoing`, the only way out is `completed`.
+
+## What moves a scrim along
+
+Either the host, from the management page, or the clock. If the scrim carries a registration
+window, a start time and an end time, Finalist performs each transition on schedule.
+
+## What each transition triggers
+
+| Transition | Effect |
+|------------|--------|
+| → `registration_open` | Announced. Teams may register. |
+| → `registration_closed` | Announced. Slot list becomes visible if it was hidden. |
+| → `ongoing` | Announced. Slotted captains notified: *Your scrim is starting 🎮* |
+| → `completed` | Announced. Captains notified; results can be declared. |
+| → `cancelled` | Announced. |
+
+`draft` and `upcoming` are quiet. No announcements, so you can prepare a scrim without
+spamming a channel.
+
+Announcements reach the scrim page in real time and any
+[bound Discord channel](../discord/connect-server).

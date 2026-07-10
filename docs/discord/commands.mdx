@@ -1,0 +1,87 @@
+---
+sidebar_position: 3
+---
+
+# Command reference
+
+Two commands work everywhere: `/link` and `/help`. Every other group is installed into
+a server only while that server is [connected to an organization](./connect-server), and
+is removed again on disconnect.
+
+Most commands also need your Discord account [linked](./link-account) to a Finalist
+account. The bot will tell you if it isn't.
+
+## Always available
+
+| Command | Options | What it does |
+|---------|---------|--------------|
+| `/link` | None | Links your Discord to your Finalist account, or confirms it is already linked. |
+| `/help` | `command` (optional) | Browse what the bot can do. Pass a command name for detail. |
+
+![The /help landing embed](./assets/help-command.png)
+
+## `/scrim`: browse and enter scrims
+
+Every subcommand takes the scrim's **share id** (the 12-character code from its URL);
+the option autocompletes, so you rarely type it.
+
+| Command | Options | What it does |
+|---------|---------|--------------|
+| `/scrim list` | None | Active scrims, grouped into Live, Open for registration, and Upcoming. |
+| `/scrim view` | `scrim` (required) | Status, start time, registration window and slot list. |
+| `/scrim register` | `scrim` (required), `team` (optional) | Registers your team. Only the captain can. |
+| `/scrim unregister` | `scrim` (required), `team` (optional) | Withdraws your team. |
+| `/scrim waitlist` | `scrim` (required) | Shows who is waiting for a slot. |
+| `/scrim results` | `scrim` (required) | Placements and points, once results are declared. |
+
+![The /scrim list reply](./assets/scrim-list-command.png)
+
+`team` is optional. If you captain exactly one team, the bot uses it.
+
+## `/team`: your teams
+
+| Command | Options | What it does |
+|---------|---------|--------------|
+| `/team mine` | None | Your teams and their rosters. |
+| `/team view` | `team_id` (required) | A team's roster. The captain is marked with a crown. |
+| `/team create` | None | Sends you to the web app. The bot doesn't create teams itself. |
+
+## `/me`: your stats and profile
+
+| Command | Options | What it does |
+|---------|---------|--------------|
+| `/me stats` | `team_id` (optional) | Your recent results, or a team's record. |
+| `/me rank` | None | Your standing in this server's organization. |
+| `/me profile` | None | Opens your Finalist profile. |
+
+## `/org`: this server's organization
+
+| Command | Options | What it does |
+|---------|---------|--------------|
+| `/org info` | None | Name, handle and owner of the connected organization. |
+| `/org leaderboard` | `board` (optional: `Players` or `Teams`) | Top 10. Defaults to players. |
+
+## `/host`: organizer tools
+
+Restricted to the organization's **owner** and **admins**. This is a platform role, not a
+Discord permission. An org admin without Manage Server can still use these, and a Discord
+administrator who isn't in the org cannot.
+
+| Command | Options | What it does |
+|---------|---------|--------------|
+| `/host create` | None | Opens the new-scrim page. |
+| `/host edit` | `scrim` (required) | Opens a scrim's management page. |
+| `/host registrations` | `scrim` (required) | Lists the teams registered for a scrim. |
+| `/host org` | None | Opens organization settings: members, invites, bans, Discord. |
+| `/host presets` | None | Opens recurring scrim schedules. |
+| `/host bind` | `scrim` (optional) | Posts announcements in this channel. |
+| `/host unbind` | None | Stops announcements in this channel. |
+
+Creating and editing happen on the web; `/host` mostly gives you a fast way in, plus the
+channel bindings that drive announcements.
+
+## Replies are private
+
+Everything that shows *your* data (`/link`, `/me *`, `/team mine`, `/host *`,
+`/scrim unregister`) replies ephemerally, so only you see it. `/scrim list`,
+`/scrim view` and `/team view` post publicly, since they are meant to be shared.

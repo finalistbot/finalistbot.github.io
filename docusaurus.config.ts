@@ -7,7 +7,7 @@ import { links } from "./constants";
 
 const config: Config = {
   title: "Finalist",
-  tagline: "The best Discord bot for scrim/tournament management",
+  tagline: "Run scrims your community actually shows up for",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -42,10 +42,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/finalistbot/finalistbot.github.io/tree/main/",
         },
         blog: {
           showReadingTime: true,
@@ -53,10 +51,8 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/finalistbot/finalistbot.github.io/tree/main/",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",

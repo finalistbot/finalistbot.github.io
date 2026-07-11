@@ -60,7 +60,6 @@ Tips:
 | `filter-log.png` | The filter log, showing entries with their reasons (`no_ign`, `lineup_too_small`, `slot_freed_backfill`). |
 | `room-details-editor.png` | The room-details editor with key/value fields, one marked secret. |
 | `room-details-publish.png` | The publish dialog: reveal now vs. schedule a reveal time. |
-| `results-draft.png` | Entering placements and scores as a draft, before declaring. |
 | `declare-results.png` | The declare-results confirmation, mentioning the 24-hour edit window. |
 | `leaderboard.png` | An organization's player or team leaderboard. |
 | `create-preset.png` | The new-preset form, showing daily/weekly recurrence and map rotation. |

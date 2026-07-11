@@ -71,6 +71,7 @@ Tips:
 | File | What to capture |
 |------|-----------------|
 | `org-discord-settings.png` | Organization Settings → Discord on the dashboard, where a server is connected. |
+| `claim-command.png` | The `/claim` reply: "Organization claimed", with the Open dashboard button. |
 | `host-bind.png` | Running `/host bind` in a channel, and the bot's confirmation. |
 | `announcement-embed.png` | A scrim status announcement embed in a bound channel (e.g. "Registration is OPEN"). |
 | `link-command.png` | The `/link` reply for an unlinked user, showing the "Log in with Discord" button. |

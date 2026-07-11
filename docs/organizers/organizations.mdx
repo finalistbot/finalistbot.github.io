@@ -11,6 +11,10 @@ need one, and if you're on a team with other admins, the org is what you share.
 
 ## Create one
 
+There are two ways to get an organization, and they differ in where you start.
+
+### On the web
+
 On <a href={links.manage}>app.finalist.live</a>, create an organization with a name and a
 **slug**. The slug is lowercase and unique, and it becomes your public address:
 
@@ -20,12 +24,23 @@ https://finalist.live/o/your-slug
 
 ![Creating an organization](./assets/create-org.png)
 
-That public page shows your identity, the scrims you're hosting, and your player and team
-leaderboards. Anyone can view it without an account.
+You are the **owner** of any org you create this way.
+
+### From Discord
+
+Invite the bot to a Discord server and Finalist provisions an organization for it
+automatically, named after the server, with a slug derived from that name. It arrives
+**unclaimed**: no owner, no members, until someone claims it with `/claim` or from the web.
+
+This is the shortest path from nothing to hosting, and it's covered in
+[Connect your server](../discord/connect-server).
+
+### Your public page
+
+Either way, the org gets a public page showing your identity, the scrims you're hosting, and
+your player and team leaderboards. Anyone can view it without an account.
 
 ![The public organization page](./assets/org-public-page.png)
-
-You are the **owner** of any org you create.
 
 ## Switching organizations
 
@@ -39,13 +54,23 @@ Members join by **invitation only**. There's no request-to-join flow, and no pub
 
 | Role | Can do |
 |------|--------|
-| **Owner** | Everything. Cannot be removed, and cannot have their role changed. |
+| **Owner** | Everything, including handing the org to someone else. |
 | **Admin** | Every org action except transferring ownership. |
 | **Moderator** | A limited set of moderation actions. |
 
-There is exactly one owner: whoever created the org.
+There is exactly one owner at a time. An org you create is owned by you; an org created from
+a Discord install has no owner at all until it's claimed.
 
 ![Organization members and their roles](./assets/org-members.png)
+
+### Transferring ownership
+
+Only the current owner can transfer, and only to somebody who is **already a member**. Invite
+them first if they aren't.
+
+The swap happens in one move: the person you name becomes the owner, and you stay in the org
+as an **admin**. You both get told. Like every other consequential action, it lands in the
+audit log.
 
 ### Inviting
 
@@ -74,9 +99,9 @@ Bans are per-organization. Banning someone from your org does not affect any oth
 
 ## Audit log
 
-Every consequential action is recorded: org created or updated, member roles changed, members
-removed, invites sent, accepted, declined or cancelled, and every ban and unban. Each entry
-records who did it and when.
+Every consequential action is recorded: org created, claimed or updated, ownership transferred,
+member roles changed, members removed, invites sent, accepted, declined or cancelled, and every
+ban and unban. Each entry records who did it and when.
 
 There's also an access log showing member activity in the org.
 

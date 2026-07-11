@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Command reference
 
-Two commands work everywhere: `/link` and `/help`. Every other group is installed into
-a server only while that server is [connected to an organization](./connect-server), and
-is removed again on disconnect.
+Three commands work everywhere: `/link`, `/help` and `/claim`. Every other group is
+installed into a server only while that server is
+[connected to an organization](./connect-server), and is removed again on disconnect.
 
 Most commands also need your Discord account [linked](./link-account) to a Finalist
 account. The bot will tell you if it isn't.
@@ -17,8 +17,13 @@ account. The bot will tell you if it isn't.
 |---------|---------|--------------|
 | `/link` | None | Links your Discord to your Finalist account, or confirms it is already linked. |
 | `/help` | `command` (optional) | Browse what the bot can do. Pass a command name for detail. |
+| `/claim` | None | Takes ownership of this server's organization. Needs **Manage Server**. |
 
 ![The /help landing embed](./assets/help-command.png)
+
+`/claim` is global for a reason: a server that has just had the bot added holds an
+**unclaimed** organization, and the command has to work there before anything else does.
+See [Connect your server](./connect-server).
 
 ## `/scrim`: browse and enter scrims
 

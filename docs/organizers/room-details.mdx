@@ -13,20 +13,31 @@ holding a slot**, and only once you publish.
 
 ## Write them
 
-On the scrim's management page, add the fields you need. Saving is not publishing, so you can
-prepare the lobby well in advance and nobody sees anything.
+On the scrim's **Room details** tab, add the fields you need. The common ones are one click
+away (Room ID, Password, Server / Region, Lobby name, Map, Start time, Slot number, Stream
+link), and **Add custom field** covers anything else. Drag them to reorder.
+
+The eye icon on a field marks it **secret**, so it stays masked until a captain chooses to
+reveal it. Password is secret by default.
 
 ![The room-details editor](./assets/room-details-editor.png)
 
+**Save draft** is not publishing. You can prepare the whole lobby well in advance and nobody
+sees a thing.
+
 ## Publish them
 
-Publishing has two modes:
+**Publish** hands the details to slotted captains. Two modes:
 
-- **Now**, so captains can read them immediately.
-- **At a scheduled time**, where Finalist reveals them at that moment, typically a few minutes
-  before start, so the lobby isn't sitting open waiting to be crashed.
+- **Immediately**, which is what happens by default.
+- **On a schedule**, by turning on **Schedule reveal** and picking the moment. Typically a
+  few minutes before start, so the lobby isn't sitting open waiting to be crashed.
 
-![Publishing room details now or on a schedule](./assets/room-details-publish.png)
+Once published, the tab says so, and the button becomes **Notify again**. Edits you make
+afterwards are saved but don't re-notify anybody until you press it, so fixing a typo doesn't
+ping thirty captains.
+
+![Room details published to slotted captains](./assets/room-details-publish.png)
 
 On reveal, slotted captains are notified in-app, by push, and by Discord DM.
 

@@ -12,17 +12,25 @@ scoreboard. There are as many slots as **max slots**.
 **Automatic slotlist** hands out slots in registration order: first team in takes slot 1.
 Turn it off and you assign them yourself.
 
-![The slot list](./assets/slotlist.png)
+![A full slot list](./assets/slotlist.png)
 
-Either way you can, at any point before the scrim starts:
+Either way, the **live slot board** is where you work, and it stays editable until the scrim
+starts. Drag a waitlisted team into a slot, or drag slotted teams around to reorder them.
+Double-click a team to see the lineup it's bringing.
 
-- assign a team to a slot
-- swap two slots
-- clear a slot, leaving it empty
-- reset every slot at once
-- delete a slot
+![Dragging a waitlisted team into an open slot](./assets/assign-slot.png)
 
-![Assigning a slot by hand](./assets/assign-slot.png)
+Per slot you get **Clear**, which empties the slot but keeps the team registered, and
+**Remove**, which takes the team out of the slot list entirely. Above the grid:
+
+| Control | What it does |
+|---------|--------------|
+| Fill from waitlist | Pulls waiting teams into every open slot, in order. |
+| Export slotlist | Downloads the slot list, for posting it elsewhere. |
+| Reset slots | Empties every slot at once. |
+| Live sync | Streams other people's changes onto your board as they happen. |
+
+The board is shared, so if a co-admin is dragging teams around at the same time, you see it.
 
 Set **live slots visible** if you want players watching the grid fill up. Leave it off and
 the list stays hidden until registration closes, which helps when slot order carries an
@@ -34,10 +42,12 @@ Once every slot is taken, further registrations queue up on a waitlist, in order
 
 Finalist backfills automatically. Whenever a slot frees up, whether by a withdrawal or a team
 removed by the pre-match filter, the first waitlisted team is promoted into it and its captain
-is told. You can also promote a specific team out of order, or demote a registered team back to
-the waitlist.
+is told.
 
-![Managing the waitlist](./assets/waitlist-manage.png)
+You can also do it by hand. The waitlist sits beside the board: drag any waiting team into a
+slot to promote it out of order, or drag a slotted team onto the waitlist to send it back.
+
+![The waitlist beside the slot board](./assets/waitlist-manage.png)
 
 ## Pre-match filters
 

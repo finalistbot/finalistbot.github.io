@@ -63,7 +63,7 @@ Tips:
 | `declare-results.png` | The declare-results confirmation, mentioning the 24-hour edit window. |
 | `leaderboard.png` | An organization's player or team leaderboard. |
 | `create-preset.png` | The new-preset form, showing daily/weekly recurrence and map rotation. |
-| `preset-list.png` | The presets list, with an active preset and a paused one. |
+| `preset-list.png` | A recurring schedule's page: its cadence summary, Pause/Delete, and the occurrences it generated. |
 
 ## `docs/discord/assets/`: Discord
 

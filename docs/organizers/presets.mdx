@@ -8,38 +8,58 @@ If you run the same scrim every evening, don't create it every evening. A **pres
 recurring schedule: describe the scrim once, and Finalist creates each instance for you,
 ahead of time.
 
+They live with your scrims, under **Series**. You can also start one straight from the scrim
+form: flip **Repeat** to Daily or Weekly and you're building a schedule rather than a one-off.
 From Discord, `/host presets` opens them.
 
 ## What a preset holds
 
-Everything a scrim needs (game, mode, slots, substitute allowance, minimum lineup size,
-require-IGN, filter timing), plus the recurrence:
+Everything a generated scrim needs, in four parts.
 
-| Setting | Options |
+**Game.** The game and mode every instance is created for.
+
+**Basics.** A name and description. Instances are named after the preset and their date, like
+*Testing — 2026-07-13 18:00 IST*.
+
+**Cadence.** When the scrims run:
+
+| Setting | Meaning |
 |---------|---------|
-| Recurrence | **Daily** or **weekly** |
-| Time | Read in the organization's timezone |
-| Map rotation | **Manual**, **random**, or **round robin** over the preset's map pool |
+| Recurrence | **Daily**, or **weekly** on the days you pick |
+| Timezone | The preset's own timezone. Every start time is read in it, so daylight-saving shifts don't drag your scrim an hour |
+| Scrim start time | Time of day, e.g. 6:00 PM |
+| Scrim duration | In minutes. Sets each instance's end time |
+| Registration opens / closes | **Minutes before start**, not clock times — 360 and 30 means registration runs from six hours before until half an hour before |
+| Map rotation | Manual, random or round-robin |
 
-![Creating a recurring preset](./assets/create-preset.png)
+![Creating a recurring schedule](./assets/create-preset.png)
 
-For a weekly preset, choose which days it runs. A map pool with round-robin rotation walks
-through your maps in order, one per instance.
+Registration windows being relative is the point: you set them once, and they follow every
+instance to wherever its start time lands.
+
+**Slot and lineup defaults**, applied to each generated scrim: max slots (0 for unlimited),
+minimum lineup size, and the filter's auto-kick timing. These are the same settings a one-off
+scrim has, so anything you can do to a single scrim, a preset can do to all of them.
 
 ## Generated scrims
 
-Finalist looks ahead a fixed window and materializes upcoming instances as ordinary public
-scrims, named after the preset and the date. From then on they behave exactly like a scrim
-you created by hand, and you can edit any single instance without touching the schedule.
+Finalist looks **seven days ahead** and materializes upcoming instances as ordinary public
+scrims. From then on they behave exactly like a scrim you created by hand: you can edit any
+single instance, or cancel it, without touching the schedule.
+
+The schedule's page lists everything it has produced, under **Occurrences**.
+
+![A daily schedule and the scrims it has generated](./assets/preset-list.png)
 
 Instances are created once. Re-running the scheduler never duplicates them.
 
-## Pausing
+## Pausing and deleting
 
 A preset is **active**, **paused**, or **cancelled**. **Only active presets generate scrims.**
 
-![The presets list](./assets/preset-list.png)
+**Pause** stops the next instances appearing without losing the configuration, which is the
+right move for a seasonal break. **Resume** starts it again. Either way, scrims that were
+already generated stay exactly where they are — pausing does not delete them.
 
-Pause one to stop the next instances appearing without losing the configuration, which is the
-right move for a seasonal break. Scrims that were already generated stay where they are; pausing
-does not delete them.
+**Delete** removes the schedule and keeps its existing scrims too. Teams registered for a
+generated scrim never lose it because you tidied up a schedule.

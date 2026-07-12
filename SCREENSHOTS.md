@@ -72,7 +72,8 @@ Tips:
 | `add-app.png` | The bot's Discord profile, with the **Add App** button. |
 | `org-discord-settings.png` | Organization Settings → Discord on the dashboard, where a server is connected. |
 | `claim-command.png` | The `/claim` reply: "Organization claimed", with the Open dashboard button. |
-| `host-bind.png` | Running `/host bind` in a channel, and the bot's confirmation. |
+| `host-bind.png` | Running `/host bind` in a channel, and the bot's **confirmation** (not the error). |
+| `host-bind-wrong-org.png` | `/host bind scrim:…` refused because the scrim belongs to another organization. |
 | `announcement-embed.png` | A scrim status announcement embed in a bound channel (e.g. "Registration is OPEN"). |
 | `link-command.png` | The `/link` reply. *Currently shows the already-linked confirmation; the unlinked reply with the "Log in with Discord" button would be the better shot.* |
 | `help-command.png` | The `/help` landing embed with its category dropdown. |

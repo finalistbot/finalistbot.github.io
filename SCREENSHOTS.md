@@ -38,7 +38,6 @@ Tips:
 | `scrim-browse.png` | The scrim list on play.finalist.live, with at least one scrim open for registration. |
 | `register-lineup.png` | The registration screen: picking the lineup, each player's role, and an IGN override. |
 | `waitlist.png` | A scrim's waitlist as a player sees it, with the queue order. |
-| `removed-from-scrim.png` | The "Removed from scrim" notification a captain gets when the filter kicks their team. |
 | `room-details-player.png` | Room details as a slotted captain sees them on the scrim page. |
 | `results-page.png` | A completed scrim's declared results, showing placements and scores. |
 
@@ -57,7 +56,6 @@ Tips:
 | `slotlist.png` | The slot grid for a scrim, with teams assigned to numbered slots. |
 | `assign-slot.png` | Assigning or swapping a team's slot by hand. |
 | `waitlist-manage.png` | The host's waitlist view, with promote and demote controls. |
-| `filter-log.png` | The filter log, showing entries with their reasons (`no_ign`, `lineup_too_small`, `slot_freed_backfill`). |
 | `room-details-editor.png` | The room-details editor with key/value fields, one marked secret. |
 | `room-details-publish.png` | The publish dialog: reveal now vs. schedule a reveal time. |
 | `declare-results.png` | The declare-results confirmation, mentioning the 24-hour edit window. |

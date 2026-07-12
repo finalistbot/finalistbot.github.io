@@ -13,9 +13,21 @@ brings announcements, room details and quick lookups into your Discord server.
 Every server that uses Finalist is backed by an **organization**, because scrims belong to
 an org and never to a person. How you get one depends on whether you already have one.
 
+## Invite the bot
+
+Two ways, and they add the same bot:
+
+- Open the **Finalist** bot's profile in Discord and press **Add App**.
+- Run `/help` anywhere the bot already is, and press **Invite Me**.
+
+![Adding the bot from its Discord profile](./assets/add-app.png)
+
+Pick your server, keep the permissions it asks for, and confirm. You need **Manage Server**
+on that server — that part is Discord's rule, not ours.
+
 ## If you don't have an organization yet
 
-Just invite the bot.
+Inviting the bot is the whole setup.
 
 Finalist notices the bot joining and provisions an organization for that server on the
 spot, named after it. You don't fill in a form, and you don't have to visit the dashboard
@@ -24,8 +36,6 @@ first.
 That organization arrives **unclaimed**: it exists and it's linked to your server, but it
 has no owner and no members yet. Claiming it is the next step, and until someone does,
 nobody can host with it.
-
-![Connecting a server from the dashboard](./assets/org-discord-settings.png)
 
 ### Claim it
 
@@ -50,14 +60,24 @@ later if you want.
 
 ## If you already have an organization
 
-Connect the server from the dashboard instead.
+Start from the dashboard instead, so the server joins the org you already have rather than
+getting one of its own.
 
 1. Open your organization on <a href={links.manage}>app.finalist.live</a>.
 2. Go to **Settings → Discord**.
-3. Select the server you invited the bot to, and connect it.
+3. Press **Connect Discord**, pick your server, and confirm.
+
+![Settings → Discord, with no server connected yet](./assets/org-discord-settings.png)
+
+That button invites the bot for you: it's the same invite, carrying the knowledge of which
+organization the server should end up in. So there's nothing to claim afterwards — the server
+is linked to your org the moment the bot lands.
 
 A server belongs to exactly one organization. Trying to connect one that another org already
 owns is rejected.
+
+You can connect more than one server to the same organization, and every connected server
+gets the same announcements.
 
 ## What the bot can do before it's connected
 

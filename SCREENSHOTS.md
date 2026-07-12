@@ -69,6 +69,7 @@ Tips:
 
 | File | What to capture |
 |------|-----------------|
+| `add-app.png` | The bot's Discord profile, with the **Add App** button. |
 | `org-discord-settings.png` | Organization Settings → Discord on the dashboard, where a server is connected. |
 | `claim-command.png` | The `/claim` reply: "Organization claimed", with the Open dashboard button. |
 | `host-bind.png` | Running `/host bind` in a channel, and the bot's confirmation. |

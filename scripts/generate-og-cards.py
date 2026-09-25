@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
-"""Generate a 1200x630 social card per blog post.
+"""Generate the site's 1200x630 social card.
 
-The site's own logo is square (3200x3200), and every social platform crops a
-square into a 1.91:1 slot badly — so each post gets a real card carrying its
-title instead. Run after adding or retitling a post:
+The logo is square (3200x3200), and every social platform crops a square into a
+1.91:1 slot badly — so the card themeConfig.image points at is drawn here
+instead. Regenerate after a rebrand, or after changing the tagline:
 
     python3 scripts/generate-og-cards.py
 
 Needs Pillow and any sans font (falls back through the list in FONT_CANDIDATES).
-Output lands in static/img/og/<slug>.png, which the post's `image:` points at.
+Output is static/img/og/default.png.
+
+This used to draw a card per blog post as well. The blog moved to
+finalist.live/blog, where the cards are generated at request time by
+next/og — see apps/web/features/shared/seo/og-card.tsx in the frontend repo.
 """
 
 import os
-import re
 import sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BLOG = os.path.join(ROOT, "blog")
 OUT = os.path.join(ROOT, "static", "img", "og")
 
 W, H = 1200, 630
@@ -110,20 +112,8 @@ def main():
     except OSError:
         logo = None
 
-    # The site-wide fallback, used by anything without a card of its own.
     print(card("default", "Run scrims and tournaments your community actually shows up for",
                "Docs · Guides", logo))
-
-    for name in sorted(os.listdir(BLOG)):
-        if not name.endswith(".md"):
-            continue
-        text = open(os.path.join(BLOG, name)).read()
-        fm = text.split("---\n")[1]
-        slug = re.search(r"^slug: (.+)$", fm, re.M).group(1).strip()
-        title = re.search(r'^title: "?(.+?)"?$', fm, re.M).group(1).strip()
-        tags = re.search(r"^tags: \[(.+)\]$", fm, re.M)
-        eyebrow = " · ".join(t.strip() for t in tags.group(1).split(",")[:2]) if tags else ""
-        print(card(slug, title, eyebrow, logo))
 
 
 if __name__ == "__main__":

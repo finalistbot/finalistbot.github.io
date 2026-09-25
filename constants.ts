@@ -21,6 +21,12 @@ export const links = {
   // The tags are read once, on landing, into a first-party cookie and then
   // dropped — see packages/app-shell/src/lib/attribution.ts in the frontend
   // repo. Without them every arrival from here counts as "referral" at best.
+  // The blog is part of the marketing site, not of these docs — it was here
+  // briefly and moved, so that the links a post earns count for the domain the
+  // product is on. Kept in the navbar because the two answer neighbouring
+  // questions: docs say how the feature works, the blog says how to run the
+  // event.
+  blog: "https://finalist.live/blog?utm_source=docs&utm_medium=referral",
   web: "https://finalist.live?utm_source=docs&utm_medium=referral",
   play: "https://play.finalist.live?utm_source=docs&utm_medium=referral",
   manage: "https://app.finalist.live?utm_source=docs&utm_medium=referral",

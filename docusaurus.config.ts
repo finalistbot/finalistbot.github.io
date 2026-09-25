@@ -5,6 +5,29 @@ import { links } from "./constants";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+// What the blog published while it lived on this site. Kept as data because the
+// redirect table below is the only thing that still needs to know.
+const BLOG_HOME = "https://finalist.live/blog";
+const BLOG_POSTS = [
+  "bgmi-points-table-explained",
+  "room-id-leaks",
+  "hosting-scrims-google-form-breaks",
+  "drawing-lobbies-nobody-can-call-rigged",
+  "daily-scrims-without-burning-out",
+  "entry-fees-prize-money-and-the-act",
+];
+const BLOG_TAGS = [
+  "bgmi",
+  "community",
+  "discord",
+  "formats",
+  "free-fire",
+  "hosting",
+  "india",
+  "scrims",
+  "tournaments",
+];
+
 const config: Config = {
   title: "Finalist",
   tagline: "Run scrims and tournaments your community actually shows up for",
@@ -83,61 +106,66 @@ const config: Config = {
           editUrl:
             "https://github.com/finalistbot/finalistbot.github.io/tree/main/",
         },
-        blog: {
-          // The listing page is a landing page in its own right: it is what a
-          // search result for the blog itself resolves to, so it gets a real
-          // title and description rather than the bare "Blog" default.
-          blogTitle: "Finalist blog — hosting scrims and tournaments",
-          blogDescription:
-            "Guides for the people running competitive events: slot lists, room details, points tables, group draws, and the rules around them.",
-          postsPerPage: 10,
-          blogSidebarCount: "ALL",
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          editUrl:
-            "https://github.com/finalistbot/finalistbot.github.io/tree/main/",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
+        // The blog lives at finalist.live/blog now: a post earns links for the
+        // domain that has the product and the signup on it, not for a docs
+        // subdomain. `false`, not omitted — preset-classic turns the blog on
+        // with defaults when the key is missing.
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
         // Default sitemap entries are all priority 0.5 / weekly, which tells a
-        // crawler nothing. Rank them instead, and drop the pages that exist for
-        // navigation rather than for reading — an archive listing and an author
-        // index compete with the posts they link to.
+        // crawler nothing. Rank them instead.
         sitemap: {
           lastmod: "date",
           changefreq: null,
           priority: null,
           createSitemapItems: async ({ defaultCreateSitemapItems, ...rest }) => {
             const items = await defaultCreateSitemapItems(rest);
-            return items
-              .filter(
-                (item) =>
-                  !item.url.includes("/blog/archive") &&
-                  !item.url.includes("/blog/authors"),
-              )
-              .map((item) => {
-                const path = item.url.replace(/^https?:\/\/[^/]+/, "") || "/";
-                if (path === "/") return { ...item, priority: 1.0 };
-                if (path.startsWith("/blog/tags"))
-                  return { ...item, priority: 0.3 };
-                if (path === "/blog") return { ...item, priority: 0.8 };
-                if (path.startsWith("/blog/"))
-                  return { ...item, priority: 0.7 };
-                if (path === "/docs/getting-started")
-                  return { ...item, priority: 0.8 };
-                return { ...item, priority: 0.6 };
-              });
+            return items.map((item) => {
+              const path = item.url.replace(/^https?:\/\/[^/]+/, "") || "/";
+              if (path === "/") return { ...item, priority: 1.0 };
+              if (path === "/docs/getting-started")
+                return { ...item, priority: 0.8 };
+              return { ...item, priority: 0.6 };
+            });
           },
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  // Every URL the blog published while it lived here, pointed at its new home.
+  // GitHub Pages serves static files and cannot issue a 301, so these are
+  // meta-refresh pages — weaker than a real redirect, and enough here: the blog
+  // was up for hours, so there is little accumulated ranking to carry across.
+  // If docs.finalist.live ever sits behind a proxy that can issue a 301, do it
+  // there and leave these as the fallback.
+  plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          { from: "/blog", to: BLOG_HOME },
+          { from: "/blog/archive", to: BLOG_HOME },
+          { from: "/blog/authors", to: BLOG_HOME },
+          { from: "/blog/authors/finalist", to: BLOG_HOME },
+          { from: "/blog/tags", to: BLOG_HOME },
+          // The feed moved with it; Atom folds into the one feed that exists now.
+          { from: "/blog/rss.xml", to: `${BLOG_HOME}/rss.xml` },
+          { from: "/blog/atom.xml", to: `${BLOG_HOME}/rss.xml` },
+          // Tag pages were never rebuilt on the new site — six posts over nine
+          // tags is nine near-empty pages — so they land on the index.
+          ...BLOG_TAGS.map((tag) => ({
+            from: `/blog/tags/${tag}`,
+            to: BLOG_HOME,
+          })),
+          ...BLOG_POSTS.map((slug) => ({
+            from: `/blog/${slug}`,
+            to: `${BLOG_HOME}/${slug}`,
+          })),
+        ],
+      },
     ],
   ],
 
@@ -165,7 +193,7 @@ const config: Config = {
           position: "left",
           label: "Docs",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        { href: links.blog, label: "Blog", position: "left" },
         {
           href: links.supportServer,
           label: "Support Server",
@@ -195,7 +223,7 @@ const config: Config = {
             },
             {
               label: "Blog",
-              to: "/blog",
+              href: links.blog,
             },
           ],
         },

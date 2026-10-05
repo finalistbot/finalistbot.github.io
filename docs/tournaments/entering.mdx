@@ -12,7 +12,7 @@ set, the same as a scrim.
 ## Find one
 
 Tournaments are listed on <a href={links.play}>play.finalist.live</a> under **Tournaments**,
-on the hosting organization's public page, and through `/tournament list` in Discord.
+on the hosting organization's public page, and through `/event list` in Discord.
 
 Visibility works in three levels:
 
@@ -88,9 +88,11 @@ minutes before.
 You'll be notified when it opens. Check in from the match on the event page, or in Discord:
 
 ```
-/tournament matches
-/tournament checkin 412
+/event checkin
 ```
+
+The option autocompletes to the events you are actually in, and the bot checks you in for
+the next match that is asking for it — there is no match id to find first.
 
 **Miss the window and your slot is forfeited.** Finalist closes check-in on the clock and
 forfeits the no-shows without anyone having to press anything. If check-in is disabled for
@@ -101,7 +103,7 @@ an event, a full lineup counts as readiness.
 Room details are **per lobby**, not per event. Each match's captains see their own room and
 nobody else's.
 
-Read them on the match, or with `/tournament room <match>` in Discord — always privately,
+Read them on the match, or with `/event room <match>` in Discord — always privately,
 because a room ID in a public channel is a room everyone can join.
 
 Before the organizer reveals them you'll be told to check back; a reveal can be scheduled
@@ -112,12 +114,11 @@ for a set time, and the announcement fires exactly once when it comes due.
 Organizers can score the lobby themselves, take captain submissions, or both. Where
 submissions are open, send yours as soon as the match ends:
 
-```
-/tournament result 412 placement:1 kills:14 screenshot:<file>
-```
-
-or from the match on the web. A submission needs **at least one piece of evidence** — a
+from the match on the web. A submission needs **at least one piece of evidence** — a
 screenshot of the lobby result screen.
+
+Submitting from Discord is not built yet: the bot can read results with `/event results`,
+but sending one still happens on the web.
 
 What happens next:
 

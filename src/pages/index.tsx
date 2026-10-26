@@ -110,8 +110,8 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
-      description="Run scrims and tournaments your community actually shows up for."
+      title="Run BGMI and Free Fire scrims and tournaments"
+      description="Guides for hosting and playing scrims and tournaments on Finalist: slot lists, room details, results and the Discord bot."
     >
       <HomepageHeader />
       <main>
